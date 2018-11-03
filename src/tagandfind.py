@@ -1,7 +1,7 @@
-from flask import Flask
-app = Flask(__name__)
+from flask import Flask, render_template
+app = Flask(__name__, template_folder='assets/templates')
 
 
 @app.route('/')
-def hello_world():
-    return 'Hello, World!'
+def render_static():
+    return render_template('tag.html')
