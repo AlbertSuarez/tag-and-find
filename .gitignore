@@ -111,3 +111,6 @@ src/__init__.py
 
 # Images
 *.jpg
+
+# vscode
+.vscode
