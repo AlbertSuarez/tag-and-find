@@ -34,4 +34,3 @@ def get_entities(text):
     session_id = 'https://console.cloud.google.com/iam-admin/serviceaccounts/project?project=tag-and-find-950e7&pli=1'
     language_code = 'en-EN'
     detect_intent_texts(project_id,session_id,text,language_code)
-    return ['cozy']

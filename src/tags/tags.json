@@ -21,6 +21,12 @@
                 "cheap",
                 "expensive",
                 "clean"
+            ],
+            "sleep": [
+                "cozy",
+                "cheap",
+                "expensive",
+                "clean"
             ]
         }
     }
