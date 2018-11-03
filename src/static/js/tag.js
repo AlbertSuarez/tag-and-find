@@ -52,9 +52,13 @@ function showsecondrow(a) {
 function locationrequest(){
     console.log(document.getElementById("input"));  
     $('#formrow').hide();
+    chargesecondrow();
+}
+function chargesecondrow(){
+    var requestURL = '../../tags/tags.json';
+    json = JSON.parse(requestURL);
     $('#secondrow').show();
 }
-
 function showPosition(position) {
     console.log("Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude);
 }
