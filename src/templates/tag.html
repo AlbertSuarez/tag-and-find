@@ -27,15 +27,16 @@
                     <button type="button" onclick="showsecondrow('#another')" id="another" class="btn  circle-text">another</button>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="row main-row" id="formrow">
-        <form class="col-12 form-inline form-square" action="locationrequest()">
-            <div class="form-group mx-sm-3 mb-2">
-                <input type="text" class="form-control form-text" id="input" placeholder="Put your Location">
+            <div class="row" id="formrow">
+                <p> Please, select your destination...</p>
+                <form class="col-12 form-inline form-square" action="locationrequest()">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="text" class="form-control form-text" id="input" placeholder="Put your Location">
+                        <button type="button" class="btn form-text" onclick="locationrequest()">Confirm location</button>
+                    </div>
+                </form>
             </div>
-            <button type="button" class="btn btn-primary mb-2 form-text" onclick="locationrequest()">Confirm location</button>
-        </form>
+        </div>
     </div>
     <div class="row" id="formrow2">
         <form class="col-12 form-inline form-square" action="locationrequest()">
@@ -52,8 +53,11 @@
                 <h2 class="col-12 square-title ">NECESSITIES</h2>
             </div>
             <div class="row first-card">
-                <div class="col-3">
-                    <button type="button" onclick="showthirdrow()" class="btn circle-text"></button>
+                <div class="col">
+                    <button type="button" onclick="showthirdrow()" class="btn tag-text">Tourism attractions</button>
+                </div>
+                <div class="col">
+                    <button type="button" onclick="showthirdrow()" class="btn tag-text">Restaurant</button>
                 </div>
             </div>
         </div>
