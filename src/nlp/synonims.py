@@ -120,5 +120,23 @@ DICT_WORD = {
     'lousy': 'wonderful',
     'poor': 'wonderful',
     'rough': 'wonderful',
-    'sad': 'wonderful'
+    'sad': 'wonderful',
+
+    # Tasty synonyms
+    'tasty': 'tasty',
+    'appetizing': 'tasty',
+    'delectable': 'tasty',
+    'flavorful': 'tasty',
+    'luscious': 'tasty',
+    'pungent': 'tasty',
+    'savory': 'tasty',
+    'spicy': 'tasty',
+    'yummy': 'tasty',
+    # Tasty antonyms
+    'bland': 'tasty',
+    'distasteful': 'tasty',
+    'dull': 'tasty',
+    'flavorless': 'tasty',
+
+
 }
