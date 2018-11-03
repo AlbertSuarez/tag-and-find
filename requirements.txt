@@ -1,2 +1,2 @@
 textblob
-dialogflow
+requests

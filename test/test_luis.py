@@ -1,12 +1,12 @@
 import unittest
-from src.entities import entities
+from src.luis import luis
 
 
-class TestDialogflow(unittest.TestCase):
+class TestLuis(unittest.TestCase):
 
     def test_get_entities(self):
         text = 'The place is cozy'
-        entities.get_entities(text)
+        entities = luis.get_entities(text)
         self.assertEqual('hola','hola')
     
 
