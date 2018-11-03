@@ -29,12 +29,9 @@ def detect_intent_texts(project_id, session_id, texts, language_code):
         print('Fulfillment text: {}\n'.format(
             response.query_result.fulfillment_text))
 
-
-
-
 def get_entities(text):
     project_id = 'tag-and-find-950e7'
     session_id = 'https://console.cloud.google.com/iam-admin/serviceaccounts/project?project=tag-and-find-950e7&pli=1'
     language_code = 'en-EN'
     detect_intent_texts(project_id,session_id,text,language_code)
-    return
+    return ['cozy']
