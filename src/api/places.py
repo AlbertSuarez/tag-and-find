@@ -5,15 +5,18 @@ from src.api.here import geo_coder
 from src import *
 
 
-def search(query, radius, latitude, longitude):
+def search(latitude, longitude, radius, keyword):
     payload = {
         'key': MAPS_API_KEY,
-        'input': query,
-        'inputtype': 'textquery',
-        'locationbias': 'circle:{radius}@{lat},{lng}'.format(radius=radius, lat=latitude, lng=longitude)
+        'location': '{lat},{lng}'.format(lat=latitude, lng=longitude),
+        'radius': radius,
+        'keyword': keyword
     }
     response = requests.get(MAPS_PLACES_URL, params=payload).json()
-    print(response)
+    id_array = []
+    for res in response['results']:
+        id_array.append(res['id'])
+    return id_array
 
 
 def get_place(place_id):
@@ -25,4 +28,4 @@ def get_place(place_id):
 
 if __name__ == '__main__':
     lat, long = geo_coder('Barcelona')
-    search('Mexican Restaurants', 5000, lat, long)
+    search(lat, long, 1000, 'Mexican restaurant')
