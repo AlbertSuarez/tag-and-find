@@ -6,12 +6,11 @@ from src.api.here import geo_coder
 from src import *
 
 
-def get_ids(latitude, longitude, keyword):
+def _get_ids(latitude, longitude, keyword):
     """
     Retrieve place identifier given some parameters
     :param latitude: latitude
     :param longitude: longitude
-    :param radius: radius
     :param keyword: key query
     :return: array of place ids
     """
@@ -22,32 +21,15 @@ def get_ids(latitude, longitude, keyword):
         'keyword': keyword,
     }
     response = requests.get(MAPS_PLACES_URL, params=payload).json()
-    id_array = []
-    for res in response['results']:
-        id_array.append(res['place_id'])
-    return id_array
+    return [res['place_id'] for res in response['results']]
 
 
-def get_photo(photo_reference):
+def _get_place(place_id):
     """
-    Retrieve photo given its reference
-    :param photo_reference: photo reference
-    :return: photo path
+    Retrieve place information given its id
+    :param place_id: place identifier
+    :return: place information
     """
-    payload = {
-        'key': MAPS_API_KEY,
-        'photoreference': photo_reference,
-        'maxheight': 256
-    }
-    response = requests.get(MAPS_PHOTO_URL, params=payload)
-    image_path = 'src/images/{}.jpg'.format(uuid.uuid4())
-    with open(image_path, 'wb') as image_file:
-        image_file.write(response.content)
-
-    return image_path
-
-
-def get_place(place_id):
     payload = {
         'key': MAPS_API_KEY,
         'placeid': place_id
@@ -65,12 +47,31 @@ def get_place(place_id):
     }
 
 
-def search(place, necessity):
-    lat, long = geo_coder(place)
-    places_id = get_ids(lat, long, necessity)
-    return [get_place(place_id) for place_id in places_id]
+def get_photo(photo_reference):
+    """
+    Retrieve photo given its reference
+    :param photo_reference: photo reference
+    :return: photo path
+    """
+    payload = {
+        'key': MAPS_API_KEY,
+        'photoreference': photo_reference,
+        'maxheight': 256
+    }
+    response = requests.get(MAPS_PHOTO_URL, params=payload)
+    image_path = 'src/images/{}.jpg'.format(uuid.uuid4())
+    with open(image_path, 'wb') as image_file:
+        image_file.write(response.content)
+    return image_path
 
 
-if __name__ == '__main__':
-    r = search('Barcelona', 'Mexican restaurant')
-    print(r)
+def search(location, necessity):
+    """
+    Search places given a location and a necessity
+    :param location: location
+    :param necessity: necessity
+    :return: array of places
+    """
+    lat, long = geo_coder(location)
+    places_id = _get_ids(lat, long, necessity)
+    return [_get_place(place_id) for place_id in places_id]
