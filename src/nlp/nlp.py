@@ -1,11 +1,14 @@
 from textblob import TextBlob
 from src.nlp import entities
 
+
 def get_sentences(text):
     return text.sentences   
 
+
 def get_sentiment(text):
     return text.sentiment.polarity   
+
 
 def from_text_return_dict(text):
     text_b = TextBlob(text)
@@ -23,12 +26,12 @@ def from_text_return_dict(text):
     return dict_words
 
 
-def update_score(dict_words,key,value):
+def update_score(dict_words, key, value):
     # If exist calculate the mean score
     if key in dict_words:
-        dict_words[key][list_scrore].append(value)
-        dict_words[key][score] = sum(dict_words[key][list_scrore])
-        dict_words[key][count] += 1
+        dict_words[key]['list_score'].append(value)
+        dict_words[key]['score'] = sum(dict_words[key]['list_score'])
+        dict_words[key]['count'] += 1
     # Else create entry
     else:
         elem = {
@@ -36,7 +39,8 @@ def update_score(dict_words,key,value):
             'list_score': [value],
             'count': 1
         }
-        dict_words[key] = value
+        dict_words[key] = elem
+
 
 def get_top_entities_from_a_review(reviews):
     dict_words = {}
@@ -48,4 +52,3 @@ def get_top_entities_from_a_review(reviews):
         for key,value in dict_aux:
             update_score(dict_words,key,value)
     return dict_words
-        
