@@ -13,6 +13,7 @@ function showsecondrow(a) {
     $('#formrow').hide();
     $('#formrow2').hide();
     if(a == '#here' && $(a).hasClass('circle-text')){
+        console.log("other select");
         if (navigator.geolocation) {
             position = navigator.geolocation.getCurrentPosition(showPosition);
             $('#here').removeClass('circle-text');
@@ -31,18 +32,21 @@ function showsecondrow(a) {
             console.log("hello position selected");
         }
     } else if(a == '#here'){
+        console.log("other diselect");
         $('#here').removeClass('circle-text-2');
         $('#here').addClass('circle-text');
         $('#another').removeClass('circle-text-2');
         $('#another').addClass('circle-text');
+        locationrequest();
     }else if(a == '#another' && $(a).hasClass('circle-text')){
+        console.log("another select");
         $('#here').removeClass('circle-text-2');
         $('#here').addClass('circle-text');
         $('#another').removeClass('circle-text');
         $('#another').addClass('circle-text-2');
         $('#formrow').show();
-        console.log("hello position selected");
     }else{
+        console.log("another diselect");
         $('#here').removeClass('circle-text-2');
         $('#here').addClass('circle-text');
         $('#another').removeClass('circle-text-2');
@@ -55,8 +59,10 @@ function locationrequest(){
     chargesecondrow();
 }
 function chargesecondrow(){
-    var requestURL = '../../tags/tags.json';
-    json = JSON.parse(requestURL);
+    var jsondoc = open('../../tags/tags.json');
+    jsonfile = JSON.parse(requestURL);
+    necessitiestags = jsonfile["tags"]["necessity"]
+
     $('#secondrow').show();
 }
 function showPosition(position) {
