@@ -42,7 +42,7 @@ def process_nlp(reviews):
             _update_score(result, entity, dict_aux[entity])
 
     # Calculate means
-    scores = {}
+    entity_scores = {}
     for key in result.keys():
-        scores[key] = result[key]['total_score']/result[key]['count']
-    return scores
+        entity_scores[key] = result[key]['total_score']/result[key]['count']
+    return entity_scores
