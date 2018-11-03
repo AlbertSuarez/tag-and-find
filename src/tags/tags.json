@@ -1,0 +1,33 @@
+{
+    "tags": {
+        "location": [
+            "here",
+            "other"
+        ],
+        "necessity": [
+            "eat",
+            "sleep"
+        ],
+        "features": {
+            "eat": [
+                "dinner",
+                "lunch",
+                "coffee",
+                "breakfast",
+                "brunch",
+                "elaborate",
+                "terrace",
+                "cozy",
+                "cheap",
+                "expensive",
+                "clean"
+            ],
+            "sleep": [
+                "cozy",
+                "cheap",
+                "expensive",
+                "clean"
+            ]
+        }
+    }
+}

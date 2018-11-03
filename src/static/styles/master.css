@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Righteous);
 
+html {
+    height: 100%;
+}
+
 body { 
     background-image: linear-gradient(to top, #11a7cf, #34b0d8, #4abae2, #5cc3eb, #6dcdf5);
 }
@@ -45,12 +49,9 @@ body {
 }
 /* Location&Necessity CIRCLE Group */
 .first-card{
-    padding-left: 2em;
-    padding-right: 2em;
-    margin: auto;
+    margin: 0 auto;
     margin-bottom: 1em;
     padding-top: 1em;
-
 }
 .circle-text{
     width: 5em;
@@ -73,15 +74,66 @@ body {
     background-color: #274c77;
 }
 
-.circle-text:active {
-    background-color: gray;
+.circle-text-2{
+    width: 5em;
+    height: 5em;
+    background: #3395FF;
+    margin: auto;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 1em;
+    text-align: center;
+    border-radius: 4em;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #3395FF;
+    color: #FFFFFF;
+}
+/* Form Square */
+.form-square{
+    width: 100%;
+    margin-bottom: 1em;
+}
+.form-text{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    justify-content: center;
+    height: 4em;
+    border-radius: 1em;
+}
+.form-text-simple{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    height: 4em;
+    border-radius: 1em;
 }
 
-
 /* Feature TAG Group */
-.tag-text{width: 8em;
-    height: 3em;
+.tag-text{
+    width: 8em;
     background: #FFFFFF;
+    border-radius: 0.75em;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.9em;
+    text-align: center;
+    color: #000000;
+    border-color: #FFFFFF;
+}
+
+.tag-text-2 {
+    width: 8em;
+    height: 3em;
+    background: #3395FF;
     border-radius: 0.75em;
     font-family: Montserrat;
     font-style: normal;
@@ -89,14 +141,14 @@ body {
     line-height: normal;
     font-size: 0.9em;
     text-align: center;
-    color: #000000;
+    color: #ffffff;
+    border-color: #3395FF;
 }
-
 /* FIND group */
-.find-text{
+.find-text {
     width: 6em;
     height: 6em;
-    background: #01DFD7;
+    background: #274c77;
     font-family: Montserrat;
     font-style: normal;
     border-radius: 4em;
@@ -114,7 +166,6 @@ body {
     margin-top: 1.2em;
     margin-bottom: 2em;
 }
-
 .another-text{
     width: 9em;
     height: 9em;
@@ -137,6 +188,19 @@ body {
     margin-bottom: 2em;
 }
 
+.first-card .col {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    margin: auto;
+}
+
+
+.tags-square button {
+    background: #274c77;
+    color: white;
+    width: 100%;
+    margin: 0 auto;
+}
 
 .main-row {
     margin-left: 0px !important;

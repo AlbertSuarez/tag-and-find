@@ -108,3 +108,9 @@ venv.bak/
 
 # Init file
 src/__init__.py
+
+# Images
+*.jpg
+
+# vscode
+.vscode
