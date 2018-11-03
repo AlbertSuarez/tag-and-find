@@ -15,6 +15,11 @@ To run the server, please execute the following from the root directory:
 
 1. Setup virtual environment
 
+```bash
+python3 -m venv env
+source env/bin/activate
+```
+
 2. Install dependencies
 
 ```bash
