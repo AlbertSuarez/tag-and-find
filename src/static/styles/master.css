@@ -65,8 +65,50 @@
     border-color: #FFFFFF;
     color: #000000;
 }
+.circle-text-2{
+    width: 5em;
+    height: 5em;
+    background: #3395FF;
+    margin: auto;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 1em;
+    text-align: center;
+    border-radius: 4em;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #3395FF;
+    color: #FFFFFF;
+}
+/* Form Square */
+.form-square{
+    width: 100%;
+    margin-bottom: 1em;
+}
+.form-text{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    justify-content: center;
+    height: 4em;
+    border-radius: 1em;
+}
+.form-text-simple{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    height: 4em;
+    border-radius: 1em;
+}
 /* Feature TAG Group */
-.tag-text{width: 8em;
+.tag-text{
+    width: 8em;
     height: 3em;
     background: #FFFFFF;
     border-radius: 0.75em;
@@ -77,8 +119,23 @@
     font-size: 0.9em;
     text-align: center;
     color: #000000;
+    border-color: #FFFFFF;
 }
 
+.tag-text-2 {
+    width: 8em;
+    height: 3em;
+    background: #3395FF;
+    border-radius: 0.75em;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 0.9em;
+    text-align: center;
+    color: #ffffff;
+    border-color: #3395FF;
+}
 /* FIND group */
 .find-text{
     width: 6em;
@@ -101,7 +158,6 @@
     margin-top: 1.2em;
     margin-bottom: 2em;
 }
-
 .another-text{
     width: 9em;
     height: 9em;
