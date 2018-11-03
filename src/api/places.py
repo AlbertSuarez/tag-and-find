@@ -1,5 +1,4 @@
 import uuid
-
 import requests
 
 from src.api.here import geo_coder
@@ -41,7 +40,7 @@ def get_photo(photo_reference):
         'maxheight': 256
     }
     response = requests.get(MAPS_PHOTO_URL, params=payload)
-    image_path = 'src/images/{}'.format(uuid.uuid4())
+    image_path = 'src/images/{}.jpg'.format(uuid.uuid4())
     with open(image_path, 'wb') as image_file:
         image_file.write(response.content)
 
@@ -53,20 +52,14 @@ def get_place(place_id):
         'key': MAPS_API_KEY,
         'placeid': place_id
     }
-    response = requests.get(MAPS_PLACE_DETAILS_URL, params=payload).json()
-    result = response['result']
-
-    photos = []
-    if 'photos' in result:
-        photos = [get_photo(photo['photo_reference']) for photo in result['photos']]
-
+    result = requests.get(MAPS_PLACE_DETAILS_URL, params=payload).json()['result']
     return {
         'name': result['name'],
         'url': result['url'],
         'rating': None if 'rating' not in result else result['rating'],
         'address': None if 'formatted_address' not in result else result['formatted_address'],
         'price_level': None if 'price_level' not in result else result['price_level'],
-        'photo': photos,
+        'photo': None if 'photos' not in result else [photo['photo_reference'] for photo in result['photos']],
         'types': [] if 'types' not in result else result['types'],
         'reviews': [] if 'reviews' not in result else [review['text'] for review in result['reviews']]
     }
