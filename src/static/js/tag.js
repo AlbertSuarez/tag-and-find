@@ -3,6 +3,7 @@ $('#secondrow').hide();
 $('#thirdrow').hide();
 $('#fourthrow').hide();
 $('#formrow').hide();
+$('#formrow2').hide();
 
 function showsecondrow(a) {
     entity = "";
@@ -10,25 +11,42 @@ function showsecondrow(a) {
     $('#thirdrow').hide();
     $('#fourthrow').hide();
     $('#formrow').hide();
+    $('#formrow2').hide();
     if(a == '#here' && $(a).hasClass('circle-text')){
         if (navigator.geolocation) {
             position = navigator.geolocation.getCurrentPosition(showPosition);
-            $(a).removeClass('circle-text');
-            $(a).addClass('circle-text-2');
+            $('#here').removeClass('circle-text');
+            $('#here').addClass('circle-text-2');
+            $('#another').removeClass('circle-text-2');
+            $('#another').addClass('circle-text');
             $('#formrow').hide();
             locationrequest();
         }else{
             $('#formrow').show();
-            $(a).removeClass('circle-text-2');
-            $(a).addClass('circle-text');
+            $('#secondrow').hide();
+            $('#here').removeClass('circle-text-2');
+            $('#here').addClass('circle-text');
+            $('#another').removeClass('circle-text');
+            $('#another').addClass('circle-text-2');
             console.log("hello position selected");
         }
     } else if(a == '#here'){
-        $(a).removeClass('circle-text-2');
-        $(a).addClass('circle-text');
-    }else{
+        $('#here').removeClass('circle-text-2');
+        $('#here').addClass('circle-text');
+        $('#another').removeClass('circle-text-2');
+        $('#another').addClass('circle-text');
+    }else if(a == '#another' && $(a).hasClass('circle-text')){
+        $('#here').removeClass('circle-text-2');
+        $('#here').addClass('circle-text');
+        $('#another').removeClass('circle-text');
+        $('#another').addClass('circle-text-2');
         $('#formrow').show();
         console.log("hello position selected");
+    }else{
+        $('#here').removeClass('circle-text-2');
+        $('#here').addClass('circle-text');
+        $('#another').removeClass('circle-text-2');
+        $('#another').addClass('circle-text');
     }
 }
 function locationrequest(){
