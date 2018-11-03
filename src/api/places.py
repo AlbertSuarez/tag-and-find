@@ -67,7 +67,7 @@ def get_place(place_id):
 
 def search(place, necessity):
     lat, long = geo_coder(place)
-    places_id = get_ids(lat, long, 1000, necessity)
+    places_id = get_ids(lat, long, necessity)
     return [get_place(place_id) for place_id in places_id]
 
 
