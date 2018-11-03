@@ -1,32 +1,99 @@
 {
     "tags": {
         "location": [
-            "here",
-            "other"
+            "Here",
+            "Other"
         ],
-        "necessity": [
-            "eat",
-            "sleep"
+        "necessity":[
+            "Art gallery",
+            "Bakery",
+            "Bar",
+            "Cafe",
+            "Campground",
+            "Cinema",
+            "Clothing store",
+            "Department store",
+            "Gas station",
+            "Hospital",
+            "Laundry",
+            "Library",
+            "Museum",
+            "Park",
+            "Pharmacy",
+            "Police",
+            "Post office",
+            "Restaurant",
+            "Store",
+            "Supermarket",
+            "Toilet",
+            "Tourist attractions"
         ],
         "features": {
-            "eat": [
-                "dinner",
-                "lunch",
-                "coffee",
-                "breakfast",
-                "brunch",
-                "elaborate",
-                "terrace",
-                "cozy",
-                "cheap",
-                "expensive",
-                "clean"
+            "Art gallery":[
+                "bla"
             ],
-            "sleep": [
-                "cozy",
-                "cheap",
-                "expensive",
-                "clean"
+            "Bakery":[
+                "bla"
+            ],
+            "Bar":[
+                "bla"
+            ],
+            "Cafe":[
+                "bla"
+            ],
+            "Campground":[
+                "bla"
+            ],
+            "Cinema":[
+                "bla"
+            ],
+            "Clothing store":[
+                "bla"
+            ],
+            "Department store":[
+                "bla"
+            ],
+            "Gas station":[
+                "bla"
+            ],
+            "Hospital":[
+                "bla"
+            ],
+            "Laundry":[
+                "bla"
+            ],
+            "Library":[
+                "bla"
+            ],
+            "Museum":[
+                "bla"
+            ],
+            "Park":[
+                "bla"
+            ],
+            "Pharmacy":[
+                "bla"
+            ],
+            "Police":[
+                "bla"
+            ],
+            "Post office":[
+                "bla"
+            ],
+            "Restaurant":[
+                "bla"
+            ],
+            "Store":[
+                "bla"
+            ],
+            "Supermarket":[
+                "bla"
+            ],
+            "Toilet":[
+                "bla"
+            ],
+            "Tourist attractions":[
+                "bla"
             ]
         }
     }
