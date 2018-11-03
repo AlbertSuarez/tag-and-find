@@ -7,7 +7,7 @@ from src.api.here import geo_coder
 from src import *
 
 
-def get_ids(latitude, longitude, radius, keyword):
+def get_ids(latitude, longitude, keyword):
     """
     Retrieve place identifier given some parameters
     :param latitude: latitude
@@ -19,8 +19,8 @@ def get_ids(latitude, longitude, radius, keyword):
     payload = {
         'key': MAPS_API_KEY,
         'location': '{lat},{lng}'.format(lat=latitude, lng=longitude),
-        'radius': radius,
-        'keyword': keyword
+        'rankby': 'distance',
+        'keyword': keyword,
     }
     response = requests.get(MAPS_PLACES_URL, params=payload).json()
     id_array = []
