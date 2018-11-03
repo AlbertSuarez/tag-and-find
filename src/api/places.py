@@ -19,6 +19,16 @@ def search(latitude, longitude, radius, keyword):
     return id_array
 
 
+def get_photo(photo_reference):
+    payload = {
+        'key': MAPS_API_KEY,
+        'photoreference': photo_reference,
+        'maxheight': 256
+    }
+    response = requests.get(MAPS_PHOTO_URL, params=payload)
+    print(response)
+
+
 def get_place(place_id):
     payload = {
         'key': MAPS_API_KEY,
@@ -40,4 +50,5 @@ def get_place(place_id):
 
 if __name__ == '__main__':
     lat, long = geo_coder('Barcelona')
-    search(lat, long, 1000, 'Mexican restaurant')
+    places_id = search(lat, long, 1000, 'Mexican restaurant')
+    print(places_id)
