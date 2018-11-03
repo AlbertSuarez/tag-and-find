@@ -28,7 +28,13 @@ pip3 install -r requirements.txt
 
 3. Copy __init__.template.py to __init__.py with correct values
 
-4. Run Startup server as docker containers (and clean the old ones)
+4. Install `textblob` dependencies
+
+```bash
+python -m textblob.download_corpora
+```
+
+5. Run Startup server as docker containers (and clean the old ones)
     
 ```bash
 TODO
