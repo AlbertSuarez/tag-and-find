@@ -1,31 +1,33 @@
-#background{
-    background: #E5E5E5;
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+
+body { 
+    background-image: linear-gradient(to top, #11a7cf, #34b0d8, #4abae2, #5cc3eb, #6dcdf5);
 }
 /* title */
 .title{
     height: 1.5em;
     font-family: Montserrat;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
     line-height: normal;
-    font-size: 2.5em;
     margin-top: 1em;
-    margin-bottom: 1em;
-    color: #01DFD7;
+    margin-bottom: 0.65em;
+    color: #ffffff;
+    font-size: 3em;
+    text-align: center;
 }
 /* locations, necessities, feature SQUARES */
 .master-square{
-    height: 13em;
-    background: #A9F5F2;
-    opacity: 0.8;
-    border-radius: 1em;
     margin-bottom: 1.5em;
+    background-color:  rgb(255,255,255);
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.2);
+    border-radius: 5px; 
 }
 .tags-square{
     height: auto;
-    background: #A9F5F2;
-    opacity: 0.8;
-    border-radius: 1em;
+    background-color: rgb(255,255,255);
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.2);
+    border-radius: 2px; 
     margin-bottom: 1.5em;
 }
 .square-title{
@@ -36,8 +38,10 @@
     font-style: normal;
     font-weight: normal;
     line-height: normal;
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: #000000;
+    letter-spacing: 8px;
+    text-align: center;
 }
 /* Location&Necessity CIRCLE Group */
 .first-card{
@@ -45,6 +49,8 @@
     padding-right: 2em;
     margin: auto;
     margin-bottom: 1em;
+    padding-top: 1em;
+
 }
 .circle-text{
     width: 5em;
@@ -57,14 +63,21 @@
     line-height: normal;
     font-size: 1em;
     text-align: center;
-    border-radius: 4em;
+    border-radius: 5em;
     vertical-align: middle;
     display: flex;
     justify-content: center;
     align-items: center;
     border-color: #FFFFFF;
-    color: #000000;
+    color: #FFFFFF;
+    background-color: #274c77;
 }
+
+.circle-text:active {
+    background-color: gray;
+}
+
+
 /* Feature TAG Group */
 .tag-text{width: 8em;
     height: 3em;
@@ -108,7 +121,7 @@
     background: #01DFD7;
     font-family: Montserrat;
     font-style: normal;
-    border-radius: 6em;
+    border-radius: 9em;
     font-weight: 700;
     line-height: normal;
     font-size: 1em;
@@ -122,4 +135,16 @@
     border-color: #01DFD7;
     margin-top: 1.2em;
     margin-bottom: 2em;
+}
+
+
+.main-row {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.border-bottom {
+    border-bottom: 8px solid gray;
+    margin-left: 6px;
+    margin-right: 6px;
 }
