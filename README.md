@@ -26,7 +26,9 @@ source env/bin/activate
 pip3 install -r requirements.txt
 ```
 
-3. Run Startup server as docker containers (and clean the old ones)
+3. Copy __init__.template.py to __init__.py with correct values
+
+4. Run Startup server as docker containers (and clean the old ones)
     
 ```bash
 TODO
