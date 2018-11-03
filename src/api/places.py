@@ -21,6 +21,18 @@ def get_place(place_id):
         'key': MAPS_API_KEY,
         'placeid': place_id
     }
+    response = requests.get(MAPS_PLACE_DETAILS_URL, params=payload).json()
+    result = response['result']
+    return {
+        'name': result['name'],
+        'url': result['url'],
+        'rating': result['rating'],
+        'address': result['formatted_address'],
+        'price_level': result['price_level'],
+        'photo': 'l',
+        'types': result['types'],
+        'reviews': [review['text'] for review in result['reviews']]
+    }
 
 
 if __name__ == '__main__':
