@@ -147,18 +147,9 @@ body {
 }
 
 .tag-text-2 {
-    width: 8em;
-    height: 3em;
-    background: #3395FF;
-    border-radius: 0.75em;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    line-height: normal;
-    font-size: 0.9em;
-    text-align: center;
-    color: #ffffff;
-    border-color: #3395FF;
+    background: #FFFFFF !important;
+    color: #274c77 !important;
+    border-color: #274c77 !important;
 }
 /* FIND group */
 .find-text {
@@ -239,25 +230,20 @@ body {
 /** COLORS **/ 
 
 .color-one {
-    background-color:  #FF8E8E;
-    color: rgb(163, 34, 34);
-    border:5px rgb(163, 34, 34);
+    background-color:  #0B7189;
+
 }
 
 .color-two {
-    background-color:  #FFB991;
-    color: rgb(163, 73, 20);
-    border:5px rgb(163, 73, 20);
+    background-color:  #228CDB;
+
 }
 
 .color-three {
-    background-color:  #F9F6AE;
-    color: rgb(165, 159, 0);
-    border:5px rgb(165, 159, 0);
+    background-color:  #005E7C;
 }
 
 .color-four {
-    background-color:  #DDFFCE;
-    color: rgb(81, 184, 38);
-    border:5px rgb(81, 184, 38);
+    background-color:  #3DA5D9;
+
 }

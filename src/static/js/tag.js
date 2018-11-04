@@ -1,5 +1,11 @@
 var entity = Array();
+var necessities = Array();
 var first = 0;
+var response = {
+    'first': '',
+    'second':'',
+    'third':''
+};
 $('#secondrow').hide();
 $('#thirdrow').hide();
 $('#fourthrow').hide();
@@ -49,8 +55,8 @@ function showsecondrow(a) {
     }
 }
 function locationrequest(){
-    console.log(document.getElementById("input"));  
-    $('#formrow').hide();
+    response['first'] = document.getElementById('input-location').value;
+    console.log(response['first']);
     chargesecondrow();
 }
 function loadJSON(callback) {   
@@ -72,9 +78,9 @@ function chargesecondrow(){
             var necessitiestags = json["tags"]["necessity"];
             for( pos in necessitiestags) {
                 var need = necessitiestags[pos];
+                var needid = need.replace(" ","-");
                 i = Math.floor((Math.random() * 4) + 1);
-                $('#necessitiestags').append("<div class='col'><button type='button' onclick='showthirdrow('" + need + "')' class='btn tag-text color-"+ list_num[i%4]+"' id='" + need +"'>" + need + "</button></div>");
-                i = i + 1;
+                $('#necessitiestags').append(`<div class="col"><button type="button" onclick="showthirdrow('${needid}')" class="btn tag-text color-${list_num[i%4]} " id="${needid}"> ${need} </button></div>`);
             }
         });
         first = 1;
@@ -84,8 +90,25 @@ function chargesecondrow(){
 function showPosition(position) {
     console.log("Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude);
 }
-function showthirdrow() {
-    $('#thirdrow').show();
+function showthirdrow(a) {
+    b = "#" + a;
+    console.log(b);
+    if( $(b).hasClass('tag-text-2')){
+        necessities.pop()
+        $(b).removeClass('tag-text-2');
+        $('#thirdrow').hide();
+    }
+    else{
+        if(necessities.length != 0){
+            c = necessities.pop();
+            console.log(c)
+            $(c).removeClass('tag-text-2');
+        }
+        necessities.push(b)
+        $(b).addClass('tag-text-2');
+        $('#thirdrow').show();
+    }
+    console.log(necessities);
 }
 
 function showfourthrow(a) {
