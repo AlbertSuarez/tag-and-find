@@ -5,14 +5,14 @@ html {
 }
 
 body { 
-    background-image: linear-gradient(to top, #11a7cf, #34b0d8, #4abae2, #5cc3eb, #6dcdf5);
+    background-color: #34b0d8;
 }
 /* title */
 .title{
     height: 1.5em;
     font-family: Montserrat;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     line-height: normal;
     margin-top: 1em;
     margin-bottom: 0.65em;
@@ -227,8 +227,9 @@ body {
 }
 
 #formrow p {
-    font-size: 13px;
+    font-size: 14px;
     color: gray;
     padding-left: 3em;
-    padding-top: 1em;   
+    padding-top: 0.5em;   
+    color: #274c77;
 }

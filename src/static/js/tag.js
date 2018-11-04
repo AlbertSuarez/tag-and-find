@@ -19,13 +19,13 @@ function showsecondrow(a) {
             locationrequest();
         }else{
             $('#formrow').show();
-            $(a).removeClass('circle-text-2');
-            $(a).addClass('circle-text');
+            $(a).removeClass('tag-text-2');
+            $(a).addClass('tag-text');
             console.log("hello position selected");
         }
     } else if(a == '#here'){
-        $(a).removeClass('circle-text-2');
-        $(a).addClass('circle-text');
+        $(a).removeClass('tag-text-2');
+        $(a).addClass('tag-text');
     }else{
         $('#formrow').show();
         console.log("hello position selected");
