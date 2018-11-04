@@ -28,20 +28,20 @@
             "tourist attractions"
         ],
         "features": {
-            "Art gallery":[
+            "art gallery":[
                 "quiet",
                 "wonderful",
                 "cheap",
                 "luxurious"
             ],
-            "Bakery":[
+            "bakery":[
                 "tasty",
                 "cheap",
                 "luxurious",
                 "quick",
                 "gentle"
             ],
-            "Bar":[
+            "bar":[
                 "clean",
                 "comfortable",
                 "quiet",
@@ -51,7 +51,7 @@
                 "quick",
                 "gentle"
             ],
-            "Cafe":[
+            "cafe":[
                 "clean",
                 "comfortable",
                 "quiet",
@@ -61,44 +61,44 @@
                 "quick",
                 "gentle"
             ],
-            "Campground":[
+            "campground":[
                 "clean",
                 "quiet",
                 "comfortable",
                 "wonderful"
             ],
-            "Cinema":[
+            "cinema":[
                 "comfortable",
                 "quiet",
                 "cheap",
                 "luxurious"
             ],
-            "Clothing store":[
+            "clothing store":[
                 "comfortable",
                 "cheap",
                 "luxurious",
                 "gentle"
             ],
-            "Department store":[
+            "department store":[
                 "comfortable",
                 "cheap",
                 "luxurious",
                 "gentle",
                 "quiet"
             ],
-            "Gas station":[
+            "gas station":[
                 "clean",
                 "cheap",
                 "quick",
                 "gentle"
             ],
-            "Hospital":[
+            "hospital":[
                 "comfortable",
                 "quiet",
                 "quick",
                 "gentle"
             ],
-            "Laundry":[
+            "laundry":[
                 "clean",
                 "comfortable",
                 "quiet",
@@ -107,35 +107,35 @@
                 "quick",
                 "gentle"
             ],
-            "Library":[
+            "library":[
                 "clean",
                 "comfortable",
                 "quiet",
                 "wonderful",
                 "gentle"
             ],
-            "Museum":[
+            "museum":[
                 "quiet",
                 "wonderful",
                 "cheap",
                 "luxurious",
                 "gentle"
             ],
-            "Park":[
+            "park":[
                 "clean",
                 "comfortable",
                 "quiet",
                 "wonderful"
             ],
-            "Pharmacy":[
+            "pharmacy":[
                 "quick",
                 "gentle"
             ],
-            "Post office":[
+            "post office":[
                 "quick",
                 "gentle"
             ],
-            "Restaurant":[
+            "restaurant":[
                 "clean",
                 "comfortable",
                 "quiet",
@@ -145,19 +145,19 @@
                 "quick",
                 "gentle"
             ],
-            "Store":[
+            "store":[
                 "cheap",
                 "luxurious",
                 "quick",
                 "gentle"
             ],
-            "Supermarket":[
+            "supermarket":[
                 "cheap",
                 "luxurious",
                 "quick",
                 "gentle"
             ],
-            "Toilet":[
+            "toilet":[
                 "clean",
                 "comfortable",
                 "quiet",
@@ -165,7 +165,7 @@
                 "luxurious",
                 "quick"
             ],
-            "Tourist attractions":[
+            "tourist attractions":[
                 "clean",
                 "quiet",
                 "wonderful",
