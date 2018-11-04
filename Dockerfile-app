@@ -1,0 +1,6 @@
+FROM python:3.6
+ADD . /srv/tag-and-find
+WORKDIR /srv/tag-and-find
+RUN pip3 install -r requirements.txt
+CMD python -m textblob.download_corpora
+CMD uwsgi --ini tag-and-find.ini

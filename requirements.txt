@@ -1,3 +1,6 @@
 flask
+flask_cors
 requests
 textblob
+uWSGI
+uwsgitop
