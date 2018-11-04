@@ -1,7 +1,23 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+
+from src.nlp.sort import sort_places
+
+
 app = Flask(__name__, template_folder='assets/templates')
 
 
 @app.route('/')
 def render_static():
     return render_template('tag.html')
+
+
+@app.route('/search')
+def search():
+    # Get params
+    location = request.args.get('location')
+    necessity = request.args.get('necessity')
+    features = request.args.get('features')
+
+    # Sort places
+    response = sort_places(location, necessity, features.split('_'))
+    return response

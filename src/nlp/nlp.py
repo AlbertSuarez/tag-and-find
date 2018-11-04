@@ -58,11 +58,11 @@ def process_nlp(reviews):
     # Calculate means
     entity_scores = {}
     for key in result.keys():
-        scores[key] = result[key]['total_score']/result[key]['count']
+        entity_scores[key] = result[key]['total_score']/result[key]['count']
 
     # Get best sentences
     sentences = {}
     for key in result.keys():
         sentences[key] = (result[key]['person'], result[key]['sentence'])
 
-    return scores, sentences
+    return entity_scores, sentences
