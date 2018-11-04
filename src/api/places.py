@@ -43,7 +43,7 @@ def _get_place(place_id):
         'price_level': None if 'price_level' not in result else result['price_level'],
         'photo': None if 'photos' not in result else [photo['photo_reference'] for photo in result['photos']],
         'types': [] if 'types' not in result else result['types'],
-        'reviews': [] if 'reviews' not in result else [review['text'] for review in result['reviews']]
+        'reviews': [] if 'reviews' not in result else [(review['author_name'], review['text']) for review in result['reviews']]
     }
 
 
