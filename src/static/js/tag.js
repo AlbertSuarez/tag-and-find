@@ -2,9 +2,9 @@ var entities = Array();
 var necessities = Array();
 var first = 0;
 var response = {
-    'location': '',
-    'necessity': '',
-    'features': ''
+    'first': '',
+    'second':'',
+    'third':''
 };
 $('#secondrow').hide();
 $('#thirdrow').hide();
@@ -14,19 +14,21 @@ $('#formrow2').hide();
 
 function showsecondrow(a) {
     entity = "";
+    console.log("holi");
     $('#secondrow').hide();
     $('#thirdrow').hide();
     $('#fourthrow').hide();
     $('#formrow').hide();
     $('#formrow2').hide();
     if(a == '#here' && $(a).hasClass('circle-text')){
+        console.log("other select");
         if (navigator.geolocation) {
             position = navigator.geolocation.getCurrentPosition(showPosition);
             $('#here').removeClass('circle-text');
             $('#here').addClass('circle-text-2');
             $('#another').removeClass('circle-text-2');
             $('#another').addClass('circle-text');
-            locationrequest(0);
+            locationrequest();
         }else{
             $('#formrow').show();
             $('#here').removeClass('circle-text-2');
@@ -52,12 +54,9 @@ function showsecondrow(a) {
         $('#another').addClass('circle-text');
     }
 }
-function locationrequest(a){
-    if(a == 1) {
-        response['location'] = document.getElementById('input-location').value;
-    }else{
-        response['location'] = "Bremen";
-    }
+function locationrequest(){
+    response['first'] = document.getElementById('input-location').value;
+    console.log(response['first']);
     loadsecondrow();
 }
 function loadJSON(callback) {   
@@ -109,18 +108,14 @@ function showthirdrow(a) {
     }
 }
 function loadthirdrow(b){
-    //var list_num = ['one','two','three','four'];
-    //var i = 0;
     loadJSON(function(json) {
-        var a = b.replace("-"," ");
+        var a = b.replace("-"," ")
         var featurestags = json["tags"]["features"][a];
-        response["necessity"] = b;
         $('#featurestags').empty();
         for( pos in featurestags) {
             var need = featurestags[pos];
             var needid = need.replace(" ","-");
-            $('#featurestags').append(`<div class="col"><button type="button" onclick="showfourthrow('${needid}')" id="${needid}" class="btn tag-text color-${list_num[i%4]}">${need}</button></div`);
-            //i = i + 1;
+            $('#featurestags').append(`<div class="col"><button type="button" onclick="showfourthrow('${needid}')" id="${needid}" class="btn tag-text">${need}</button></div`);
         }
     });
     $('#thirdrow').show();
@@ -140,11 +135,6 @@ function showfourthrow(a) {
     }
 }
 function passinfo() {
-    for(i = 0; i < entities.length; i++){
-        response["features"] += entities[i] + "_";
-    }
-    $.get("/search", function(response, status){
-        alert("Data: " + response, + "\nStatus: " + status);
-    });
+    console.log()
 }
 
