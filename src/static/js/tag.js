@@ -83,8 +83,16 @@ function chargesecondrow(){
 function showPosition(position) {
     console.log("Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude);
 }
-function showthirdrow() {
-    $('#thirdrow').show();
+function showthirdrow(a) {
+    b = "#" + a;
+    if( $(b).hasClass('tag-text-2')){
+        $(b).removeClass('tag-text-2');
+        $('#thirdrow').hide();
+    }
+    else{
+        $(b).addClass('tag-text-2');
+        $('#thirdrow').show();
+    }
 }
 
 function showfourthrow(a) {
