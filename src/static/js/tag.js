@@ -70,12 +70,15 @@ function loadJSON(callback) {
     xobj.send(null);  
 }
 function chargesecondrow(){
+    var list_num = ['one','two','three','fourth'];
+    var i = 0;
     if(first == 0){
         loadJSON(function(json) {
             var necessitiestags = json["tags"]["necessity"];
             for( pos in necessitiestags) {
                 var need = necessitiestags[pos];
-                $('#necessitiestags').append("<div class='col'><button type='button' onclick='showthirdrow('" + need + "')' class='btn tag-text' id='" + need +"'>" + need + "</button></div>");
+                $('#necessitiestags').append("<div class='col'><button type='button' onclick='showthirdrow('" + need + "')' class='btn tag-text color-"+ list_num[i]+"' id='" + need +"'>" + need + "</button></div>");
+                i = i + 1;
             }
         });
         first = 1;

@@ -132,7 +132,6 @@ body {
 /* Feature TAG Group */
 .tag-text{
     width: 8em;
-    background: #FFFFFF;
     border-radius: 0.75em;
     font-family: Montserrat;
     font-style: normal;
@@ -141,6 +140,10 @@ body {
     text-align: center;
     color: #000000;
     border-color: #FFFFFF;
+    background: #274c77;
+    color: white;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .tag-text-2 {
@@ -207,14 +210,6 @@ body {
     margin: auto;
 }
 
-
-.tags-square button, #secondrow button  {
-    background: #274c77;
-    color: white;
-    width: 100%;
-    margin: 0 auto;
-}
-
 .main-row {
     margin-left: 0px !important;
     margin-right: 0px !important;
@@ -232,4 +227,23 @@ body {
     padding-left: 3em;
     padding-top: 0.5em;   
     color: #274c77;
+}
+
+
+/** COLORS **/ 
+
+.color-one {
+    background-color:  #F2E863 !important;
+}
+
+.color-two {
+    background-color:  #274c77 !important;
+}
+
+.color-three {
+    background-color:  #F25757 !important;
+}
+
+.color-four {
+    background-color:  #FAA275 !important;
 }
