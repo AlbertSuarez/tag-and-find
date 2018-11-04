@@ -142,5 +142,8 @@ function passinfo() {
     for(i = 0; i < entities.length; i++){
         response["features"] += entities[i] + "_";
     }
+    window.location = "/search?location=" + response["location"] +
+                            "&necessity=" + response["necessity"] +
+                            "&features=" + response["features"];
 }
 
