@@ -56,7 +56,7 @@ def process_nlp(reviews):
             _update_score(result, entity, dict_scores[entity], dict_sentences[entity], person)
 
     # Calculate means
-    scores = {}
+    entity_scores = {}
     for key in result.keys():
         scores[key] = result[key]['total_score']/result[key]['count']
 
