@@ -63,7 +63,8 @@ def get_photo(photo_reference):
     payload = {
         'key': MAPS_API_KEY,
         'photoreference': photo_reference,
-        'maxheight': 256
+        'maxheight': 256,
+        'maxweight': 512
     }
     response = requests.get(MAPS_PHOTO_URL, params=payload)
     image_file_name = '{}.jpg'.format(uuid.uuid4())
