@@ -2,12 +2,22 @@ from textblob import TextBlob
 from src.nlp import entities
 
 
-def _update_score(dict_words, entity, score):
+def _update_score(dict_words, entity, score, sentence, person):
     if entity in dict_words:
         dict_words[entity]['count'] += 1
         dict_words[entity]['total_score'] += score
+        if score >= dict_words[entity]['max_score']:
+            dict_words[entity]['max_score'] = score
+            dict_words[entity]['sentence'] = sentence
+            dict_words[entity]['person'] = person
     else:
-        dict_words[entity] = {'total_score': score, 'count': 1}
+        dict_words[entity] = {
+            'total_score': score,
+            'count': 1,
+            'max_score': score,
+            'sentence': sentence,
+            'person': person
+        }
 
 
 def _get_sentiment(text):
@@ -15,7 +25,8 @@ def _get_sentiment(text):
     text_b = TextBlob(text)
     # Split in sentences
     sentences = text_b.sentences
-    result = {}
+    result_score = {}
+    result_sentence = {}
     for sentence in sentences:
         # Get entities
         entity_list = entities.get_entities(sentence.words)
@@ -23,26 +34,35 @@ def _get_sentiment(text):
         sent = sentence.sentiment.polarity
         # Assign sentiment to the entities
         for entity in entity_list:
-            if entity not in result:
-                result[entity] = sent
+            if entity not in result_score:
+                result_score[entity] = sent
+                result_sentence[entity] = str(sentence)
             else:
                 # If we have a duplicate entity in the same review, we'll keep the greater score
-                result[entity] = max(sent, result[entity])
-    return result
+                if sent >= result_score[entity]:
+                    result_sentence[entity] = str(sentence)
+                result_score[entity] = max(sent, result_score[entity])
+    return result_score, result_sentence
 
 
 def process_nlp(reviews):
     result = {}
     # Look each review
-    for review in reviews:
+    for person, review in reviews:
         # Get entities from the review
-        dict_aux = _get_sentiment(review)
+        dict_scores, dict_sentences = _get_sentiment(review)
         # Insert each entity into location entities dictionary
-        for entity in dict_aux.keys():
-            _update_score(result, entity, dict_aux[entity])
+        for entity in dict_scores.keys():
+            _update_score(result, entity, dict_scores[entity], dict_sentences[entity], person)
 
     # Calculate means
     entity_scores = {}
     for key in result.keys():
-        entity_scores[key] = result[key]['total_score']/result[key]['count']
-    return entity_scores
+        scores[key] = result[key]['total_score']/result[key]['count']
+
+    # Get best sentences
+    sentences = {}
+    for key in result.keys():
+        sentences[key] = (result[key]['person'], result[key]['sentence'])
+
+    return scores, sentences
