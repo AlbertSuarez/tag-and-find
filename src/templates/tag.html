@@ -70,8 +70,17 @@
 
      <div class="row" id="fourthrow">
         <div class="col-12">
-            <button type="button" onclick="passinfo()" class="btn  find-text">find</button>
+            <button type="button" id='submit-button' onclick="passinfo()" class="btn  find-text">find</button>
+            <div class="load-wrapp invisible" id='loading-message'>
+                <div class="load-3">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <p>Processing your review ...</p>
+                </div>
+            </div>
         </div>
+
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="../static/js/tag.js"></script>
