@@ -1,5 +1,5 @@
 # Tag & Find
-🔖 Project built in JacobsHack 2018
+Project built in JacobsHack 2018
 
 ## Requirements
 
