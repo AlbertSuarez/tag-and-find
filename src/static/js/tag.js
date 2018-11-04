@@ -14,12 +14,14 @@ $('#formrow2').hide();
 
 function showsecondrow(a) {
     entity = "";
+    console.log("holi");
     $('#secondrow').hide();
     $('#thirdrow').hide();
     $('#fourthrow').hide();
     $('#formrow').hide();
     $('#formrow2').hide();
     if(a == '#here' && $(a).hasClass('circle-text')){
+        console.log("other select");
         if (navigator.geolocation) {
             position = navigator.geolocation.getCurrentPosition(showPosition);
             $('#here').removeClass('circle-text');
@@ -140,8 +142,8 @@ function passinfo() {
     for(i = 0; i < entities.length; i++){
         response["features"] += entities[i] + "_";
     }
-    $.get("/search", function(response, status){
-        alert("Data: " + response, + "\nStatus: " + status);
-    });
+    window.location = "/search?location=" + response["location"] +
+                            "&necessity=" + response["necessity"] +
+                            "&features=" + response["features"];
 }
 

@@ -19,7 +19,9 @@ def search():
     location = request.args.get('location')
     necessity = request.args.get('necessity')
     features = request.args.get('features')
+    features = features.split('_')
+    del features[-1]
 
     # Sort places
-    response = sort_places(location, necessity, features.split('_'))
-    return response
+    response = sort_places(location, necessity, features)
+    return render_template('result.html', params=response)
