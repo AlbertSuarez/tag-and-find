@@ -1,3 +1,5 @@
+# Quick script for internal development
+
 word1 = input()
 while True:
     word2 = input()

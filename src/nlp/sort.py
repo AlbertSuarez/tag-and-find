@@ -5,6 +5,12 @@ from src.nlp.nlp import process_nlp
 
 
 def _clean_scores_entities(entity_scores, features):
+    """
+    Clean score entities given a list of features
+    :param entity_scores: entities scores
+    :param features: features
+    :return: score entities cleaned
+    """
     entity_scores_aux = {}
     for entity in entity_scores.keys():
         if entity in features:
@@ -19,6 +25,12 @@ def _clean_scores_entities(entity_scores, features):
 
 
 def _clean_sentences_entities(entity_sentences, features):
+    """
+    Clean sentences entities given a list of features
+    :param entity_sentences: entity sentences
+    :param features: features
+    :return: sentences entities cleaned
+    """
     entity_sentences_aux = {}
     for entity in entity_sentences.keys():
         if entity in features:
@@ -27,6 +39,12 @@ def _clean_sentences_entities(entity_sentences, features):
 
 
 def _get_best_sentence(entity_scores, entity_sentences):
+    """
+    Retrieve best sentences given a batch of scores and sentences
+    :param entity_scores: scores
+    :param entity_sentences: sentences
+    :return: pair of user review and sentence
+    """
     best_entity = max(entity_scores.items(), key=operator.itemgetter(1))[0]
     if best_entity in entity_sentences:
         return entity_sentences[best_entity]
@@ -35,6 +53,13 @@ def _get_best_sentence(entity_scores, entity_sentences):
 
 
 def sort_places(location, necessity, features):
+    """
+    Sort places given a location, a necessity and a batch of features using NLP
+    :param location: location
+    :param necessity: necessity
+    :param features: features
+    :return: list of places sorted by importance
+    """
     place_score = {}
     best_sentence = {}
     places = search(location, necessity)

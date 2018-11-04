@@ -1,4 +1,5 @@
-# ENTITIES
+# ENTITIES DICTIONARY
+
 DICT_WORD = {
     # Clean synonyms
     'clean': 'clean',

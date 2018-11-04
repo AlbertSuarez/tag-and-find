@@ -106,9 +106,6 @@ venv.bak/
 # Jetbrains
 .idea
 
-# Init file
-src/__init__.py
-
 # Images
 *.jpg
 

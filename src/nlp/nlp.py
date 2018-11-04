@@ -3,6 +3,15 @@ from src.nlp import entities
 
 
 def _update_score(dict_words, entity, score, sentence, person):
+    """
+    Update global dictionary of scores
+    :param dict_words: dict words
+    :param entity: entity
+    :param score: score
+    :param sentence: sentence
+    :param person: person
+    :return: `dict_word` updated
+    """
     if entity in dict_words:
         dict_words[entity]['count'] += 1
         dict_words[entity]['total_score'] += score
@@ -21,6 +30,11 @@ def _update_score(dict_words, entity, score, sentence, person):
 
 
 def _get_sentiment(text):
+    """
+    Get sentiment score and best sentence given a review
+    :param text: review text
+    :return: score and best sentence
+    """
     # Analyse text using NLP
     text_b = TextBlob(text)
     # Split in sentences
@@ -46,6 +60,11 @@ def _get_sentiment(text):
 
 
 def process_nlp(reviews):
+    """
+    Process all the reviews using NLP
+    :param reviews: list of reviews
+    :return: a list of entities and their scores and best sentences
+    """
     result = {}
     # Look each review
     for person, review in reviews:
