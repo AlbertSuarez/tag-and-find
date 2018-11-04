@@ -18,22 +18,24 @@
     <p class="subtitle">Thanks for use our app. Here we have some results for you :)</p>
     <div class="row main-row">
         {% for item in params %}
-        <div class="col-12 location-card">
-            <a href="{{ item.url }}">
-                <div class="row border-bottom">
-                <h2 class="col-12 square-title">{{ item.name }}</h2>
-                </div>
-                <div class="row location-info">
+        <div class="col-sm-12 col-md-6">
+            <div class="location-card">
+                <a href="{{ item.url }}">
+                    <div class="row border-bottom">
+                    <h2 class="col-12 square-title">{{ item.name }}</h2>
+                    </div>
+                    <div class="row location-info">
 
-                    <div class="col-12">
-                            <img src='https://www.wien.info/media/images/41993-das-loft-sofitel-so-vienna-19to1.jpeg'/>
+                        <div class="col-12">
+                                <img src='https://www.wien.info/media/images/41993-das-loft-sofitel-so-vienna-19to1.jpeg'/>
+                        </div>
+                        <div class="col-12">
+                                <p class="cite">{{ item.sentence }}</p>
+                                <p class="author">{{ item.person }}</p>
+                        </div>
                     </div>
-                    <div class="col-12">
-                            <p class="cite">{{ item.sentence }}</p>
-                            <p class="author">{{ item.person }}</p>
-                    </div>
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
         {% endfor %}
     </div>
