@@ -3,6 +3,7 @@ $('#secondrow').hide();
 $('#thirdrow').hide();
 $('#fourthrow').hide();
 $('#formrow').hide();
+$('#formrow2').hide();
 
 function showsecondrow(a) {
     entity = "";
@@ -10,33 +11,60 @@ function showsecondrow(a) {
     $('#thirdrow').hide();
     $('#fourthrow').hide();
     $('#formrow').hide();
+    $('#formrow2').hide();
     if(a == '#here' && $(a).hasClass('circle-text')){
+        console.log("other select");
         if (navigator.geolocation) {
             position = navigator.geolocation.getCurrentPosition(showPosition);
-            $(a).removeClass('circle-text');
-            $(a).addClass('circle-text-2');
+            $('#here').removeClass('circle-text');
+            $('#here').addClass('circle-text-2');
+            $('#another').removeClass('circle-text-2');
+            $('#another').addClass('circle-text');
             $('#formrow').hide();
             locationrequest();
         }else{
             $('#formrow').show();
-            $(a).removeClass('tag-text-2');
-            $(a).addClass('tag-text');
+            $('#secondrow').hide();
+            $('#here').removeClass('circle-text-2');
+            $('#here').addClass('circle-text');
+            $('#another').removeClass('circle-text');
+            $('#another').addClass('circle-text-2');
             console.log("hello position selected");
         }
     } else if(a == '#here'){
-        $(a).removeClass('tag-text-2');
-        $(a).addClass('tag-text');
-    }else{
+        console.log("other diselect");
+        $('#here').removeClass('circle-text-2');
+        $('#here').addClass('circle-text');
+        $('#another').removeClass('circle-text-2');
+        $('#another').addClass('circle-text');
+        locationrequest();
+    }else if(a == '#another' && $(a).hasClass('circle-text')){
+        console.log("another select");
+        $('#here').removeClass('circle-text-2');
+        $('#here').addClass('circle-text');
+        $('#another').removeClass('circle-text');
+        $('#another').addClass('circle-text-2');
         $('#formrow').show();
-        console.log("hello position selected");
+    }else{
+        console.log("another diselect");
+        $('#here').removeClass('circle-text-2');
+        $('#here').addClass('circle-text');
+        $('#another').removeClass('circle-text-2');
+        $('#another').addClass('circle-text');
     }
 }
 function locationrequest(){
     console.log(document.getElementById("input"));  
     $('#formrow').hide();
+    chargesecondrow();
+}
+function chargesecondrow(){
+    var jsondoc = open('../../tags/tags.json');
+    jsonfile = JSON.parse(requestURL);
+    necessitiestags = jsonfile["tags"]["necessity"]
+
     $('#secondrow').show();
 }
-
 function showPosition(position) {
     console.log("Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude);
 }
