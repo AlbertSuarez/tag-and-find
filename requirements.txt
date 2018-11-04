@@ -4,3 +4,4 @@ requests
 textblob
 uWSGI
 uwsgitop
+nltk
