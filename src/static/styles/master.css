@@ -15,10 +15,17 @@ body {
     font-weight: 600;
     line-height: normal;
     margin-top: 1em;
-    margin-bottom: 0.65em;
     color: #ffffff;
     font-size: 3em;
     text-align: center;
+}
+
+
+header p {
+    text-align: center;
+    color: white;
+    margin-left: 9px;
+    margin-right: 9px;
 }
 /* locations, necessities, feature SQUARES */
 .master-square{
@@ -204,6 +211,7 @@ body {
 .main-row {
     margin-left: 0px !important;
     margin-right: 0px !important;
+    margin-bottom: 0.65em;
 }
 
 .border-bottom {
