@@ -109,15 +109,18 @@ function showthirdrow(a) {
     }
 }
 function loadthirdrow(b){
+    //var list_num = ['one','two','three','four'];
+    //var i = 0;
     loadJSON(function(json) {
-        var a = b.replace("-"," ")
+        var a = b.replace("-"," ");
         var featurestags = json["tags"]["features"][a];
         response["necessity"] = b;
         $('#featurestags').empty();
         for( pos in featurestags) {
             var need = featurestags[pos];
             var needid = need.replace(" ","-");
-            $('#featurestags').append(`<div class="col"><button type="button" onclick="showfourthrow('${needid}')" id="${needid}" class="btn tag-text">${need}</button></div`);
+            $('#featurestags').append(`<div class="col"><button type="button" onclick="showfourthrow('${needid}')" id="${needid}" class="btn tag-text color-${list_num[i%4]}">${need}</button></div`);
+            //i = i + 1;
         }
     });
     $('#thirdrow').show();
