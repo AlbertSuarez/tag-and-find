@@ -1,6 +1,11 @@
 var entities = Array();
 var necessities = Array();
 var first = 0;
+var response = {
+    'first': '',
+    'second':'',
+    'third':''
+};
 $('#secondrow').hide();
 $('#thirdrow').hide();
 $('#fourthrow').hide();
@@ -53,6 +58,9 @@ function locationrequest(){
     console.log(document.getElementById("input"));  
     $('#formrow').hide();
     loadsecondrow();
+    response['first'] = document.getElementById('input-location').value;
+    console.log(response['first']);
+    chargesecondrow();
 }
 function loadJSON(callback) {   
     var xobj = new XMLHttpRequest();
@@ -130,5 +138,6 @@ function showfourthrow(a) {
     }
 }
 function passinfo() {
+    console.log()
 }
 

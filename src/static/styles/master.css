@@ -143,13 +143,13 @@ body {
     background: #274c77;
     color: white;
     width: 100%;
-    margin: 0 auto;
+    margin: 3px;
 }
 
 .tag-text-2 {
-    background: #FFFFFF;
-    color: #274c77;
-    border-color: #274c77;
+    background: #FFFFFF !important;
+    color: #274c77 !important;
+    border-color: #274c77 !important;
 }
 /* FIND group */
 .find-text {
@@ -212,6 +212,12 @@ body {
     margin-right: 6px;
 }
 
+.border-top {
+    border-top: 8px solid gray;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
 #formrow p {
     font-size: 14px;
     color: gray;
@@ -224,17 +230,20 @@ body {
 /** COLORS **/ 
 
 .color-one {
-    background-color:  #007090;
+    background-color:  #0B7189;
+
 }
 
 .color-two {
-    background-color:  #2F6690;
+    background-color:  #228CDB;
+
 }
 
 .color-three {
-    background-color:  #006989;
+    background-color:  #005E7C;
 }
 
 .color-four {
-    background-color:  #30BCED;
+    background-color:  #3DA5D9;
+
 }
