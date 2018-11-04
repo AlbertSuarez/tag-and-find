@@ -37,9 +37,10 @@ def _get_place(place_id):
     result = requests.get(MAPS_PLACE_DETAILS_URL, params=payload).json()['result']
 
     photo_path = ''
-    for photo in result['photos']:
-        photo_path = get_photo(photo['photo_reference'])
-        break
+    if 'photos' in result:
+        for photo in result['photos']:
+            photo_path = get_photo(photo['photo_reference'])
+            break
 
     return {
         'name': result['name'],

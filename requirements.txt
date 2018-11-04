@@ -4,4 +4,4 @@ requests
 textblob
 uWSGI
 uwsgitop
-nltk
+gunicorn

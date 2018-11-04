@@ -55,4 +55,4 @@ def sort_places(location, necessity, features):
         places[key]['person'] = best_sentence[key][0]
         places[key]['sentence'] = best_sentence[key][1]
         result.append(places[key])
-    return result
+    return result[:10]
