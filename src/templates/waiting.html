@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tag and Find</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="shortcut icon" href="https://image.flaticon.com/icons/svg/190/190842.svg" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel='stylesheet' href="{{ url_for('static', filename='styles/master.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body nload="myFunction()">
+    <header onload="myFunction()">
+        <h1 class="title">tag and find.</h1>
+        <p class="subtitle">Searching everything to find out the best places ;)</p>
+        <center>
+            <img src="../images/animal-rocket-color.gif" alt="Funny image">
+        </center>
+        <p class="subtitle" id="txt">Looked at 0 places...</p>
+        <div id="txt"></div>
+
+        <script>
+            s = 1;
+
+            function myFunction() {
+                console.log("holi");
+                setTimeout(function(){
+                    s++;
+                    document.getElementById('txt').innerHTML = "Looking at " + s  + " places...";
+                }, 100);
+            }
+        </script>
+    </header>
+</body>
+</html>
