@@ -147,16 +147,7 @@ body {
 }
 
 .tag-text-2 {
-    width: 8em;
-    height: 3em;
     background: #FFFFFF;
-    border-radius: 0.75em;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    line-height: normal;
-    font-size: 0.9em;
-    text-align: center;
     color: #274c77;
     border-color: #274c77;
 }

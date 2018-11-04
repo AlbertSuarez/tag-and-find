@@ -1,4 +1,5 @@
 var entity = Array();
+var necessities = Array();
 var first = 0;
 $('#secondrow').hide();
 $('#thirdrow').hide();
@@ -72,7 +73,8 @@ function chargesecondrow(){
             var necessitiestags = json["tags"]["necessity"];
             for( pos in necessitiestags) {
                 var need = necessitiestags[pos];
-                $('#necessitiestags').append("<div class='col'><button type='button' onclick='showthirdrow('" + need + "')' class='btn tag-text color-"+ list_num[i%4]+"' id='" + need +"'>" + need + "</button></div>");
+                var needid = need.replace(" ","-")
+                $('#necessitiestags').append(`<div class="col"><button type="button" onclick="showthirdrow('${needid}')" class="btn tag-text color- ${list_num[i%4]} " id="${needid}"> ${need} </button></div>`);
                 i = i + 1;
             }
         });
@@ -85,14 +87,23 @@ function showPosition(position) {
 }
 function showthirdrow(a) {
     b = "#" + a;
+    console.log(b);
     if( $(b).hasClass('tag-text-2')){
+        necessities.pop()
         $(b).removeClass('tag-text-2');
         $('#thirdrow').hide();
     }
     else{
+        if(necessities.length != 0){
+            c = necessities.pop();
+            console.log(c)
+            $(c).removeClass('tag-text-2');
+        }
+        necessities.push(b)
         $(b).addClass('tag-text-2');
         $('#thirdrow').show();
     }
+    console.log(necessities);
 }
 
 function showfourthrow(a) {
