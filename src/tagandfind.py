@@ -4,7 +4,7 @@ from flask_cors import CORS
 from src.nlp.sort import sort_places
 
 
-app = Flask(__name__, template_folder='assets/templates')
+app = Flask(__name__, template_folder='templates/')
 CORS(app)
 
 
