@@ -139,6 +139,8 @@ function showfourthrow(a) {
     }
 }
 function passinfo() {
+    $('#submit-button').addClass('invisible');
+    $('#loading-message').removeClass('invisible');
     for(i = 0; i < entities.length; i++){
         response["features"] += entities[i] + "_";
     }
