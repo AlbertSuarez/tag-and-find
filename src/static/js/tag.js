@@ -1,4 +1,5 @@
 var entity = Array();
+var first = 0;
 $('#secondrow').hide();
 $('#thirdrow').hide();
 $('#fourthrow').hide();
@@ -7,6 +8,7 @@ $('#formrow2').hide();
 
 function showsecondrow(a) {
     entity = "";
+    console.log("holi");
     $('#secondrow').hide();
     $('#thirdrow').hide();
     $('#fourthrow').hide();
@@ -20,11 +22,9 @@ function showsecondrow(a) {
             $('#here').addClass('circle-text-2');
             $('#another').removeClass('circle-text-2');
             $('#another').addClass('circle-text');
-            $('#formrow').hide();
             locationrequest();
         }else{
             $('#formrow').show();
-            $('#secondrow').hide();
             $('#here').removeClass('circle-text-2');
             $('#here').addClass('circle-text');
             $('#another').removeClass('circle-text');
@@ -70,23 +70,16 @@ function loadJSON(callback) {
     xobj.send(null);  
 }
 function chargesecondrow(){
-    loadJSON(function(json) {
-        console.log(json); // this will log out the json object
-        var necessitiestags = json["tags"]["necessity"];
-        var html_out = '';
-        necessitiestags.forEach(element => {
-            //console.log(element)
-            html_out += "<div class='col'><button type='button' onclick='showthirdrow('" + element + "')' class='btn tag-text' id='" + element +"'>Tourism attractions</button></div>";
-        
+    if(first == 0){
+        loadJSON(function(json) {
+            var necessitiestags = json["tags"]["necessity"];
+            for( pos in necessitiestags) {
+                var need = necessitiestags[pos];
+                $('#necessitiestags').append("<div class='col'><button type='button' onclick='showthirdrow('" + need + "')' class='btn tag-text' id='" + need +"'>" + need + "</button></div>");
+            }
         });
-        $('#necessitiestags').append(html_out);
-        /*
-        for( pos in necessitiestags) {
-            var need = necessitiestags[pos];
-            console.log(need)
-            $('#necessitiestags').append("<div class='col'><button type='button' onclick='showthirdrow('" + need + "')' class='btn tag-text' id='" + need +"'>Tourism attractions</button></div>");
-        }*/
-    });
+        first = 1;
+    }
     $('#secondrow').show();
 }
 function showPosition(position) {
