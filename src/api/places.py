@@ -35,13 +35,19 @@ def _get_place(place_id):
         'placeid': place_id
     }
     result = requests.get(MAPS_PLACE_DETAILS_URL, params=payload).json()['result']
+
+    photo_path = ''
+    for photo in result['photos']:
+        photo_path = get_photo(photo['photo_reference'])
+        break
+
     return {
         'name': result['name'],
         'url': result['url'],
         'rating': None if 'rating' not in result else result['rating'],
         'address': None if 'formatted_address' not in result else result['formatted_address'],
         'price_level': None if 'price_level' not in result else result['price_level'],
-        'photo': None if 'photos' not in result else [photo['photo_reference'] for photo in result['photos']],
+        'photo': photo_path,
         'types': [] if 'types' not in result else result['types'],
         'reviews': [] if 'reviews' not in result else [(review['author_name'], review['text']) for review in result['reviews']]
     }
@@ -59,10 +65,11 @@ def get_photo(photo_reference):
         'maxheight': 256
     }
     response = requests.get(MAPS_PHOTO_URL, params=payload)
-    image_path = 'src/images/{}.jpg'.format(uuid.uuid4())
+    image_file_name = '{}.jpg'.format(uuid.uuid4())
+    image_path = 'src/static/images/{}'.format(image_file_name)
     with open(image_path, 'wb') as image_file:
         image_file.write(response.content)
-    return image_path
+    return "/static/images/{}".format(image_file_name)
 
 
 def search(location, necessity):
