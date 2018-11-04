@@ -26,7 +26,7 @@ body .subtitle {
     color: white;
     margin-left: 9px;
     margin-right: 9px;
-    margin-bottom: 0.75em;
+    margin-bottom: 3em;
 }
 /* locations, necessities, feature SQUARES */
 .master-square{
@@ -221,6 +221,7 @@ body .subtitle {
     border-bottom: 8px solid gray;
     margin-left: 6px;
     margin-right: 6px;
+    height: 70.797px;
 }
 
 .border-top {
@@ -267,11 +268,13 @@ body .subtitle {
     box-shadow: 0 10px 10px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.2);
     margin-bottom: 1.5em;
     padding: 1.5em;
-    min-height: 480px;
+    min-height: 500px;
 }
 .location-card img {
-    max-width: 60%;
     height: auto;
+    height: 15em;
+    width: auto;
+    max-width: 100%;
     margin-top: 0.5em;
     margin: auto;
     left:0;
@@ -320,6 +323,9 @@ body .subtitle {
         margin-left: 1em !important;
         margin-right: 1em !important;
     }
+    .location-card img {
+        height: 6em;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -327,9 +333,54 @@ body .subtitle {
         margin-left: 0em !important;
         margin-right: 0em !important;
     }
+    .location-card img {
+        height: 14em;
+    }
 }
 
 a:hover, a:visited, a:link, a:active
 {
     text-decoration: none;
+}
+
+.invisible {
+    overflow: hidden;
+}
+
+.load-wrapp p {padding: 0 0 20px;}
+.load-wrapp:last-child {margin-right: 0;}
+
+.load-wrapp {
+    float: left;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 20px 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 32px;
+    margin-top: -120px;
+}
+
+.line {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.load-3 .line:nth-last-child(1) {animation: loadingC .6s .1s linear infinite;}
+.load-3 .line:nth-last-child(2) {animation: loadingC .6s .2s linear infinite;}
+.load-3 .line:nth-last-child(3) {animation: loadingC .6s .3s linear infinite;}
+
+@keyframes loadingC {
+    0 {transform: translate(0,0);}
+    50% {transform: translate(0,15px);}
+    100% {transform: translate(0,0);}
+}
+
+.load-wrapp p {
+    font-style: italic;
+    color: white;
+    padding-top: 19px;
 }
