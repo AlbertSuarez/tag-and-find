@@ -72,6 +72,7 @@ function chargesecondrow(){
             var necessitiestags = json["tags"]["necessity"];
             for( pos in necessitiestags) {
                 var need = necessitiestags[pos];
+                i = Math.floor((Math.random() * 4) + 1);
                 $('#necessitiestags').append("<div class='col'><button type='button' onclick='showthirdrow('" + need + "')' class='btn tag-text color-"+ list_num[i%4]+"' id='" + need +"'>" + need + "</button></div>");
                 i = i + 1;
             }

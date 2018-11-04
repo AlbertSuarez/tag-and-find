@@ -143,7 +143,7 @@ body {
     background: #274c77;
     color: white;
     width: 100%;
-    margin: 0 auto;
+    margin: 3px;
 }
 
 .tag-text-2 {
@@ -221,6 +221,12 @@ body {
     margin-right: 6px;
 }
 
+.border-top {
+    border-top: 8px solid gray;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
 #formrow p {
     font-size: 14px;
     color: gray;
@@ -233,17 +239,25 @@ body {
 /** COLORS **/ 
 
 .color-one {
-    background-color:  #007090;
+    background-color:  #FF8E8E;
+    color: rgb(163, 34, 34);
+    border:5px rgb(163, 34, 34);
 }
 
 .color-two {
-    background-color:  #2F6690;
+    background-color:  #FFB991;
+    color: rgb(163, 73, 20);
+    border:5px rgb(163, 73, 20);
 }
 
 .color-three {
-    background-color:  #006989;
+    background-color:  #F9F6AE;
+    color: rgb(165, 159, 0);
+    border:5px rgb(165, 159, 0);
 }
 
 .color-four {
-    background-color:  #30BCED;
+    background-color:  #DDFFCE;
+    color: rgb(81, 184, 38);
+    border:5px rgb(81, 184, 38);
 }
