@@ -26,6 +26,7 @@ body .subtitle {
     color: white;
     margin-left: 9px;
     margin-right: 9px;
+    margin-bottom: 0.75em;
 }
 /* locations, necessities, feature SQUARES */
 .master-square{
@@ -180,6 +181,10 @@ body .subtitle {
     margin-top: 1.2em;
     margin-bottom: 2em;
 }
+.find-text:hover, .find-text:focus {
+    background-color: #ffffff;
+    color: #005E7C;
+  }
 .another-text{
     width: 9em;
     height: 9em;
@@ -262,6 +267,7 @@ body .subtitle {
     box-shadow: 0 10px 10px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.2);
     margin-bottom: 1.5em;
     padding: 1.5em;
+    min-height: 480px;
 }
 .location-card img {
     max-width: 60%;
@@ -309,11 +315,10 @@ body .subtitle {
 }
 
 
-
 @media only screen and (min-width: 600px) {
     .main-row {
-        margin-left: 4em !important;
-        margin-right: 4em !important;
+        margin-left: 1em !important;
+        margin-right: 1em !important;
     }
 }
 
