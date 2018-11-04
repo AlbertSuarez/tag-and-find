@@ -55,12 +55,9 @@ function showsecondrow(a) {
     }
 }
 function locationrequest(){
-    console.log(document.getElementById("input"));  
-    $('#formrow').hide();
-    loadsecondrow();
     response['first'] = document.getElementById('input-location').value;
     console.log(response['first']);
-    chargesecondrow();
+    loadsecondrow();
 }
 function loadJSON(callback) {   
     var xobj = new XMLHttpRequest();
@@ -82,7 +79,7 @@ function loadsecondrow(){
             for( pos in necessitiestags) {
                 var need = necessitiestags[pos];
                 var needid = need.replace(" ","-")
-                $('#necessitiestags').append(`<div class="col"><button type="button" onclick="showthirdrow('${needid}')" class="btn tag-text color- ${list_num[i%4]} " id="${needid}"> ${need} </button></div>`);
+                $('#necessitiestags').append(`<div class="col"><button type="button" onclick="showthirdrow('${needid}')" class="btn tag-text color-${list_num[i%4]} " id="${needid}"> ${need} </button></div>`);
                 i = i + 1;
             }
         });
