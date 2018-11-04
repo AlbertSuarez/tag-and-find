@@ -2,9 +2,9 @@ var entities = Array();
 var necessities = Array();
 var first = 0;
 var response = {
-    'first': '',
-    'second':'',
-    'third':''
+    'location': '',
+    'necessity': '',
+    'features': ''
 };
 $('#secondrow').hide();
 $('#thirdrow').hide();
@@ -28,7 +28,7 @@ function showsecondrow(a) {
             $('#here').addClass('circle-text-2');
             $('#another').removeClass('circle-text-2');
             $('#another').addClass('circle-text');
-            locationrequest();
+            locationrequest(0);
         }else{
             $('#formrow').show();
             $('#here').removeClass('circle-text-2');
@@ -54,9 +54,12 @@ function showsecondrow(a) {
         $('#another').addClass('circle-text');
     }
 }
-function locationrequest(){
-    response['first'] = document.getElementById('input-location').value;
-    console.log(response['first']);
+function locationrequest(a){
+    if(a == 1) {
+        response['location'] = document.getElementById('input-location').value;
+    }else{
+        response['location'] = "Bremen";
+    }
     loadsecondrow();
 }
 function loadJSON(callback) {   
@@ -111,6 +114,7 @@ function loadthirdrow(b){
     loadJSON(function(json) {
         var a = b.replace("-"," ")
         var featurestags = json["tags"]["features"][a];
+        response["necessity"] = b;
         $('#featurestags').empty();
         for( pos in featurestags) {
             var need = featurestags[pos];
@@ -135,6 +139,8 @@ function showfourthrow(a) {
     }
 }
 function passinfo() {
-    console.log()
+    for(i = 0; i < entities.length; i++){
+        response["features"] += entities[i] + "_";
+    }
 }
 
