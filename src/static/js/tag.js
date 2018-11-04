@@ -1,4 +1,4 @@
-var entity = Array();
+var entities = Array();
 var necessities = Array();
 var first = 0;
 var response = {
@@ -55,6 +55,9 @@ function showsecondrow(a) {
     }
 }
 function locationrequest(){
+    console.log(document.getElementById("input"));  
+    $('#formrow').hide();
+    loadsecondrow();
     response['first'] = document.getElementById('input-location').value;
     console.log(response['first']);
     chargesecondrow();
@@ -70,7 +73,7 @@ function loadJSON(callback) {
     };
     xobj.send(null);  
 }
-function chargesecondrow(){
+function loadsecondrow(){
     var list_num = ['one','two','three','four'];
     var i = 0;
     if(first == 0){
@@ -78,9 +81,9 @@ function chargesecondrow(){
             var necessitiestags = json["tags"]["necessity"];
             for( pos in necessitiestags) {
                 var need = necessitiestags[pos];
-                var needid = need.replace(" ","-");
-                i = Math.floor((Math.random() * 4) + 1);
-                $('#necessitiestags').append(`<div class="col"><button type="button" onclick="showthirdrow('${needid}')" class="btn tag-text color-${list_num[i%4]} " id="${needid}"> ${need} </button></div>`);
+                var needid = need.replace(" ","-")
+                $('#necessitiestags').append(`<div class="col"><button type="button" onclick="showthirdrow('${needid}')" class="btn tag-text color- ${list_num[i%4]} " id="${needid}"> ${need} </button></div>`);
+                i = i + 1;
             }
         });
         first = 1;
@@ -92,7 +95,6 @@ function showPosition(position) {
 }
 function showthirdrow(a) {
     b = "#" + a;
-    console.log(b);
     if( $(b).hasClass('tag-text-2')){
         necessities.pop()
         $(b).removeClass('tag-text-2');
@@ -101,43 +103,41 @@ function showthirdrow(a) {
     else{
         if(necessities.length != 0){
             c = necessities.pop();
-            console.log(c)
             $(c).removeClass('tag-text-2');
         }
         necessities.push(b)
         $(b).addClass('tag-text-2');
-        $('#thirdrow').show();
+        loadthirdrow(a);
     }
-    console.log(necessities);
 }
-
+function loadthirdrow(b){
+    loadJSON(function(json) {
+        var a = b.replace("-"," ")
+        var featurestags = json["tags"]["features"][a];
+        $('#featurestags').empty();
+        for( pos in featurestags) {
+            var need = featurestags[pos];
+            var needid = need.replace(" ","-");
+            $('#featurestags').append(`<div class="col"><button type="button" onclick="showfourthrow('${needid}')" id="${needid}" class="btn tag-text">${need}</button></div`);
+        }
+    });
+    $('#thirdrow').show();
+} 
 function showfourthrow(a) {
     if($('#fourthrow').hide()){
         $('#fourthrow').show()
     }
     b = "#" + a;
-    if ( $(b).hasClass('tag-text') ) {
-        entity.push(a)
-        $(b).removeClass('tag-text');
+    if (! $(b).hasClass('tag-text-2') ) {
+        entities.push(a);
         $(b).addClass('tag-text-2');
     } 
     else {
         $(b).removeClass('tag-text-2');
-        $(b).addClass('tag-text')
-        entity = entity.filter(value => value != a)
+        entities = entities.filter(value => value != a);
     }
-    console.log("Entity = " + entity)
 }
-/*
-var header = document.getElementById("b13");
-var btns = header.getElementsByClassName("btn btn-outline-primary tag-text");
-for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function() {
-        var current = document.getElementsByClassName("active");
-        this.className += " active";
-    });
-}
-*/
 function passinfo() {
+    console.log()
 }
 
