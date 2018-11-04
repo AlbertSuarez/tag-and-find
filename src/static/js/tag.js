@@ -58,11 +58,35 @@ function locationrequest(){
     $('#formrow').hide();
     chargesecondrow();
 }
+function loadJSON(callback) {   
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'https://raw.githubusercontent.com/AlbertSuarez/tag-and-find/master/src/tags/tags.json', true);
+    xobj.onreadystatechange = function () {
+      if (xobj.readyState == 4 && xobj.status == "200") {
+        callback(JSON.parse(xobj.responseText));
+      }
+    };
+    xobj.send(null);  
+}
 function chargesecondrow(){
-    var jsondoc = open('../../tags/tags.json');
-    jsonfile = JSON.parse(requestURL);
-    necessitiestags = jsonfile["tags"]["necessity"]
-
+    loadJSON(function(json) {
+        console.log(json); // this will log out the json object
+        var necessitiestags = json["tags"]["necessity"];
+        var html_out = '';
+        necessitiestags.forEach(element => {
+            //console.log(element)
+            html_out += "<div class='col'><button type='button' onclick='showthirdrow('" + element + "')' class='btn tag-text' id='" + element +"'>Tourism attractions</button></div>";
+        
+        });
+        $('#necessitiestags').append(html_out);
+        /*
+        for( pos in necessitiestags) {
+            var need = necessitiestags[pos];
+            console.log(need)
+            $('#necessitiestags').append("<div class='col'><button type='button' onclick='showthirdrow('" + need + "')' class='btn tag-text' id='" + need +"'>Tourism attractions</button></div>");
+        }*/
+    });
     $('#secondrow').show();
 }
 function showPosition(position) {
