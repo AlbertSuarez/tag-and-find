@@ -5,9 +5,11 @@ from src.nlp.nlp import process_nlp
 
 
 def _clean_entities(entity_scores, features):
+    entity_scores_aux = {}
     for entity in entity_scores.keys():
-        if entity not in features:
-            entity_scores.pop(entity, None)
+        if entity in features:
+            entity_scores_aux[entity] = entity_scores[entity]
+    entity_scores = entity_scores_aux
 
     for feature in features:
         if feature not in entity_scores:
