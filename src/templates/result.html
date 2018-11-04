@@ -6,33 +6,34 @@
   <link rel="shortcut icon" href="https://image.flaticon.com/icons/svg/190/190842.svg" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel = 'stylesheet' href = '../styles/master.css'> 
+  <link rel = 'stylesheet' href = '../static/styles/master.css'> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <header>
-    <h1 class="title">results.</h1>
+    <h1 class="title">tag and find.</h1>
+    <p class="subtitle">Thanks for use our app. Here we have some results for you :)</p>
     <!-- <div class="lines-background">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div> -->
 </header>
 <body class="container">
-    <div class="row">
+    <div class="row main-row">
         <div class="col-12 master-square">
-            <div class="row">
-                <h2 class="col-12 square-title">TITLE</h2>
+            <div class="row border-bottom">
+                <img src='https://www.wien.info/media/images/41993-das-loft-sofitel-so-vienna-19to1.jpeg'/>
+                <h2 class="col-12 square-title">LOCATION</h2>
             </div>
-            <div class="row first-card">
-                <div class="col-6">
-                    <div class="circle-text">cosis</div>
-                </div>
+            <div class="row travel">
             </div>
+
         </div>
     </div>
-    <div class="row">
+
+
+     <div class="row" id="fourthrow">
         <div class="col-12">
-            <button type="button" class="btn btn-outline-primary another-text">another search</button>
+            <button type="button" onclick="passinfo()" class="btn  find-text">Other search</button>
         </div>
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="../static/js/tag.js"></script>
 </body>
-<script>
-
-</script>
 </html>

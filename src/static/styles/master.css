@@ -1,0 +1,257 @@
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+
+html {
+    height: 100%;
+}
+
+body { 
+    background-color: #34b0d8;
+}
+/* title */
+.title{
+    height: 1.5em;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 1em;
+    color: #ffffff;
+    font-size: 3em;
+    text-align: center;
+}
+
+
+header p {
+    text-align: center;
+    color: white;
+    margin-left: 9px;
+    margin-right: 9px;
+}
+/* locations, necessities, feature SQUARES */
+.master-square{
+    margin-bottom: 1.5em;
+    background-color:  rgb(255,255,255);
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.2);
+    border-radius: 5px; 
+}
+.tags-square{
+    height: auto;
+    background-color: rgb(255,255,255);
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.2);
+    border-radius: 2px; 
+    margin-bottom: 1.5em;
+}
+.square-title{
+    margin-top: 1em;
+    margin-left: 0.5em;
+    margin-bottom: 1em;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 1.3em;
+    color: #000000;
+    letter-spacing: 8px;
+    text-align: center;
+}
+/* Location&Necessity CIRCLE Group */
+.first-card{
+    margin: 0 auto;
+    margin-bottom: 1em;
+    padding-top: 1em;
+}
+.circle-text{
+    width: 5em;
+    height: 5em;
+    background: #FFFFFF;
+    margin: auto;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 1em;
+    text-align: center;
+    border-radius: 5em;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+    background-color: #274c77;
+}
+
+.circle-text-2{
+    width: 5em;
+    height: 5em;
+    background: #3395FF;
+    margin: auto;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 1em;
+    text-align: center;
+    border-radius: 4em;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #3395FF;
+    color: #FFFFFF;
+}
+/* Form Square */
+.form-square{
+    width: 100%;
+    margin-bottom: 1em;
+}
+.form-text{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    justify-content: center;
+    height: 3em;
+    border-radius: 1em;
+}
+.form-text-simple{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    height: 4em;
+    border-radius: 1em;
+}
+.form-group {
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.form-group button {
+    right: 0;
+    margin: auto;
+    left: 0;
+    position: relative;
+    display: flex;
+    margin-top: 15px;
+}
+/* Feature TAG Group */
+.tag-text{
+    width: 8em;
+    border-radius: 0.75em;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.9em;
+    text-align: center;
+    color: #000000;
+    border-color: #FFFFFF;
+    background: #274c77;
+    color: white;
+    width: 100%;
+    margin: 3px;
+}
+
+.tag-text-2 {
+    background: #FFFFFF !important;
+    color: #274c77 !important;
+    border-color: #274c77 !important;
+}
+/* FIND group */
+.find-text {
+    width: 6em;
+    height: 6em;
+    background: #274c77;
+    font-family: Montserrat;
+    font-style: normal;
+    border-radius: 4em;
+    font-weight: 700;
+    line-height: normal;
+    font-size: 1em;
+    text-align: center;
+    color: #FFFFFF;
+    margin: auto;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #01DFD7;
+    margin-top: 1.2em;
+    margin-bottom: 2em;
+}
+.another-text{
+    width: 9em;
+    height: 9em;
+    background: #01DFD7;
+    font-family: Montserrat;
+    font-style: normal;
+    border-radius: 9em;
+    font-weight: 700;
+    line-height: normal;
+    font-size: 1em;
+    text-align: center;
+    color: #FFFFFF;
+    margin: auto;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #01DFD7;
+    margin-top: 1.2em;
+    margin-bottom: 2em;
+}
+
+.first-card .col {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    margin: auto;
+}
+
+.main-row {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin-bottom: 0.65em;
+}
+
+.border-bottom {
+    border-bottom: 8px solid gray;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.border-top {
+    border-top: 8px solid gray;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+#formrow p {
+    font-size: 14px;
+    color: gray;
+    padding-left: 3em;
+    padding-top: 0.5em;   
+    color: #274c77;
+}
+
+
+/** COLORS **/ 
+
+.color-one {
+    background-color:  #0B7189;
+
+}
+
+.color-two {
+    background-color:  #228CDB;
+
+}
+
+.color-three {
+    background-color:  #005E7C;
+}
+
+.color-four {
+    background-color:  #3DA5D9;
+
+}
