@@ -230,6 +230,7 @@ DICT_WORD = {
     'placid': 'gentle',
     'tame': 'gentle',
     'tender': 'gentle',
+    'friendly': 'gentle',
     # Gentle antonyms
     'agitated': 'gentle',
     'callous': 'gentle',
